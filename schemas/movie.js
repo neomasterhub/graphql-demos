@@ -1,12 +1,18 @@
+const movies = require('./movies.json');
 const graphql = require('graphql');
-const { GraphQLObjectType, GraphQLString, GraphQLSchema } = graphql;
+const {
+    GraphQLSchema,
+    GraphQLObjectType,
+    GraphQLString,
+    GraphQLInt,
+    GraphQLList,
+} = graphql;
 
 const MovieType = new GraphQLObjectType({
     name: 'Movie',
     fields: () => ({
-        id: { type: GraphQLString },
-        genre: { type: GraphQLString },
-        name: { type: GraphQLString },
+        title: { type: GraphQLString },
+        year: { type: GraphQLInt },
     }),
     description: 'Movie lorem ipsum.',
 });
@@ -14,10 +20,11 @@ const MovieType = new GraphQLObjectType({
 const Query = new GraphQLObjectType({
     name: 'Query',
     fields: {
-        movie: {
-            type: MovieType,
-            args: { id: { type: GraphQLString } },
+        movieOfYear: {
+            type: new GraphQLList(MovieType),
+            args: { year: { type: GraphQLInt } },
             resolve(parent, args) {
+                return movies.filter(m => m.year === args.year);
             },
         }
     },
