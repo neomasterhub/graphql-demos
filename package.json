@@ -1,0 +1,19 @@
+{
+  "name": "graphql-demos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index"
+  },
+  "author": "the@neomaster.net",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.6.0"
+  }
+}
