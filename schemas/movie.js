@@ -20,7 +20,7 @@ const MovieType = new GraphQLObjectType({
 const Query = new GraphQLObjectType({
     name: 'Query',
     fields: {
-        movieOfYear: {
+        moviesOfYear: {
             type: new GraphQLList(MovieType),
             args: { year: { type: GraphQLInt } },
             resolve(parent, args) {
