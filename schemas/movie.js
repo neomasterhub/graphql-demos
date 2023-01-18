@@ -13,6 +13,8 @@ const MovieType = new GraphQLObjectType({
     fields: () => ({
         title: { type: GraphQLString },
         year: { type: GraphQLInt },
+        cast: { type: new GraphQLList(GraphQLString) },
+        genres: {type: new GraphQLList(GraphQLString) },
     }),
     description: 'Movie lorem ipsum.',
 });
