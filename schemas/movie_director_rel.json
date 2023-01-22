@@ -1,0 +1,22 @@
+[
+    {
+        "movie_id": 1,
+        "director_id": 844
+    },
+    {
+        "movie_id": 1,
+        "director_id": 1019
+    },
+    {
+        "movie_id": 2,
+        "director_id": 1019
+    },
+    {
+        "movie_id": 2,
+        "director_id": 1386
+    },
+    {
+        "movie_id": 2,
+        "director_id": 1700
+    }
+]

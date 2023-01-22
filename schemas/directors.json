@@ -1,0 +1,51 @@
+[
+  {
+    "id": 844,
+    "lastName": "Alexander",
+    "firstName": "Jason",
+    "dateOfBirth": "19590923",
+    "dateOfDeath": ""
+  },
+  {
+    "id": 974,
+    "lastName": "Allen",
+    "firstName": "Debbie",
+    "dateOfBirth": "19500116",
+    "dateOfDeath": ""
+  },
+  {
+    "id": 1019,
+    "lastName": "Allen",
+    "firstName": "Woody",
+    "dateOfBirth": "19351201",
+    "dateOfDeath": ""
+  },
+  {
+    "id": 1141,
+    "lastName": "Altman",
+    "firstName": "Robert",
+    "dateOfBirth": "19250220",
+    "dateOfDeath": ""
+  },
+  {
+    "id": 1295,
+    "lastName": "Amiel",
+    "firstName": "Jon",
+    "dateOfBirth": "19480520",
+    "dateOfDeath": ""
+  },
+  {
+    "id": 1386,
+    "lastName": "Anders",
+    "firstName": "Allison",
+    "dateOfBirth": "19541116",
+    "dateOfDeath": ""
+  },
+  {
+    "id": 1700,
+    "lastName": "Annaud",
+    "firstName": "Jean-Jacques",
+    "dateOfBirth": "19431001",
+    "dateOfDeath": ""
+  }
+]

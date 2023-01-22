@@ -1,5 +1,7 @@
-const movies = require('./movies.json');
 const countries = require('./countries.json');
+const directors = require('./directors.json');
+const movies = require('./movies.json');
+const movie_director_rel = require('./movie_director_rel.json');
 
 const graphql = require('graphql');
 const {
@@ -19,9 +21,23 @@ const MovieType = new GraphQLObjectType({
         genres: { type: new GraphQLList(GraphQLString) },
         country_code: { type: GraphQLString },
         country: {
+            description: '1-* demo',
             type: CountryType,
             resolve(parent, args) {
                 return countries.find(c => c.code == parent.country_code);
+            }
+        },
+        directors: {
+            description: '*-* demo',
+            type: new GraphQLList(DirectorType),
+            resolve(parent, args) {
+                const director_ids = movie_director_rel
+                    .filter(md => md.movie_id == parent.id)
+                    .map(md => {
+                        return md.director_id;
+                    });
+
+                return directors.filter(d => director_ids.includes(d.id));
             }
         },
     }),
@@ -33,6 +49,15 @@ const CountryType = new GraphQLObjectType({
     fields: () => ({
         name: { type: GraphQLString },
         code: { type: GraphQLString },
+    }),
+});
+
+const DirectorType = new GraphQLObjectType({
+    name: 'Director',
+    fields: () => ({
+        id: { type: GraphQLInt },
+        firstName: { type: GraphQLString },
+        lastName: { type: GraphQLString },
     }),
 });
 
