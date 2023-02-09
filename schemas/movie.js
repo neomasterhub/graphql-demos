@@ -15,6 +15,7 @@ const {
 const MovieType = new GraphQLObjectType({
     name: 'Movie',
     fields: () => ({
+        id: { type: GraphQLInt },
         title: { type: GraphQLString },
         year: { type: GraphQLInt },
         cast: { type: new GraphQLList(GraphQLString) },
@@ -64,6 +65,18 @@ const DirectorType = new GraphQLObjectType({
 const Query = new GraphQLObjectType({
     name: 'Query',
     fields: {
+        movies: { 
+            type: new GraphQLList(MovieType),
+            resolve() {
+                return movies;
+            },
+        },
+        directors: {
+            type: new GraphQLList(DirectorType),
+            resolve() {
+                return directors;
+            },
+        },
         moviesOfYear: {
             type: new GraphQLList(MovieType),
             args: {
