@@ -41,6 +41,10 @@ const MovieType = new GraphQLObjectType({
                 return directors.filter(d => director_ids.includes(d.id));
             }
         },
+        deprecatedField: {
+            type: GraphQLInt,
+            deprecationReason: 'Deprecation lorem ipsum',
+        },
     }),
     description: 'Movie lorem ipsum.',
 });
