@@ -9,13 +9,14 @@ const {
     GraphQLObjectType,
     GraphQLString,
     GraphQLInt,
+    GraphQLID,
     GraphQLList,
 } = graphql;
 
 const MovieType = new GraphQLObjectType({
     name: 'Movie',
     fields: () => ({
-        id: { type: GraphQLInt },
+        id: { type: GraphQLID },
         title: { type: GraphQLString },
         year: { type: GraphQLInt },
         cast: { type: new GraphQLList(GraphQLString) },
@@ -42,7 +43,7 @@ const MovieType = new GraphQLObjectType({
             }
         },
         deprecatedField: {
-            type: GraphQLInt,
+            type: GraphQLID,
             deprecationReason: 'Deprecation lorem ipsum',
         },
     }),
@@ -60,7 +61,7 @@ const CountryType = new GraphQLObjectType({
 const DirectorType = new GraphQLObjectType({
     name: 'Director',
     fields: () => ({
-        id: { type: GraphQLInt },
+        id: { type: GraphQLID },
         firstName: { type: GraphQLString },
         lastName: { type: GraphQLString },
     }),
